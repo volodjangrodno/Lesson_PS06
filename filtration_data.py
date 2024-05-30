@@ -10,3 +10,5 @@ for row in data:
     for item in row:
         if item > 190:
             list.append(item)
+
+print(list)
