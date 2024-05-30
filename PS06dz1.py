@@ -22,7 +22,7 @@ driver.get(url)
 # Задаём 3 секунды ожидания, чтобы веб-страница успела прогрузиться
 time.sleep(3)
 
-divans = driver.find_elements(By.CLASS_NAME, 'lsooF')
+divans = driver.find_elements(By.CLASS_NAME, 'lcSMD')
 
 # Выводим вакансии на экран
 print(divans)
@@ -36,7 +36,7 @@ for divan in divans:
         # Находим названия дивана
         title = divan.find_element(By.CSS_SELECTOR, 'span.ui-GPFV8 qUioe ProductName ActiveProduct').text
         # Находим цену
-        price = divan.find_element(By.CSS_SELECTOR, 'span.compensation-text--cCPBXayRjn5GuLFWhGTJ').text
+        price = divan.find_element(By.CSS_SELECTOR, 'span.ui-LD-ZU KIkOH').text
         # Находим ссылку с помощью атрибута 'href'
         link = divan.find_element(By.CSS_SELECTOR, 'a.ui-GPFV8').get_attribute('href')
         # Вставляем блок except на случай ошибки - в случае ошибки программа попытается продолжать
@@ -61,7 +61,7 @@ with open("divans.csv", 'w', newline='', encoding='utf-8') as file:
     # Создаём объект
     writer = csv.writer(file)
     # Создаём первый ряд
-    writer.writerow(['Название дивана', 'производитель', 'цена', 'ссылка на товар'])
+    writer.writerow(['Название дивана', 'цена', 'ссылка на товар'])
 
     # Прописываем использование списка как источника для рядов таблицы
     writer.writerows(parsed_data)
